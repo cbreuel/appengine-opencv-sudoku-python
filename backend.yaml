@@ -1,6 +1,7 @@
-version: opencv
+#version: opencv
 module: solver
-runtime: python27
+#runtime: python27
+runtime: custom
 vm: true
 api_version: 1
 threadsafe: yes
