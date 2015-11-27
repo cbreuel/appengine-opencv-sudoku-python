@@ -112,7 +112,8 @@ class SolveStage(webapp2.RequestHandler):
             # Create a Task Queue task to parse and solve the puzzle.
             # As task parameters, indicate the URL containing the image to solve, and
             # the GCS filename to which to write the solution image.
-            task = taskqueue.Task(url='/solve_async',
+            task = taskqueue.Task(target='solver',
+                           url='/solve_async',
                            method='POST',
                            params={'image_url': image_url,
                                    'filename' : filename})
